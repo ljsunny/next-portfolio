@@ -49,10 +49,10 @@ function AboutSection() {
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 xl:px-16 sm:py-16">
         <Image src="/images/about-image.jpeg" width={500} height={500} />
-        <div>
-          <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
+        <div className="mt-5">
+          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Developer with 3 years of experience specializing in both backend
+            Developer with 3 years of experiencFe specializing in both backend
             and frontend development. As an early member of a startup, played a
             key role in the end-to-end development process, from feature
             creation to system design. Gained substantial hands-on experience in
