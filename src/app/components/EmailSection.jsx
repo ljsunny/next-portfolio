@@ -1,9 +1,38 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 const EmailSection = () => {
+  const [emailSubmitted, setEmailsubmitted] = useState(false);
+  const handleSubmit = async(e)=> {
+    e.preventDefault();
+    const data = {
+      email:e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value
+    }
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send"
+
+      const options = {
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json',
+          },
+          body:JSONdata
+      }
+
+      const response = await fetch(endpoint, options);
+      console.log(response);
+      const resData = await response.json();
+
+      if(resData.status === 200) {
+        console.log('Message sent');
+        setEmailsubmitted(true);
+      }
+  }
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
+    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4" id="contact">
       <div>
         <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
@@ -23,7 +52,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -68,6 +97,11 @@ const EmailSection = () => {
             </div>
             <button type="submit"
                     className="bg-sky-600 hover:bg-sky-900 text-white font-medium py-2.5 rounded-lg w-full">Send Message</button>
+                    {
+                      emailSubmitted &&(
+                        <p className="text-green-500 text-sm mt-2">Email sent successfully</p>
+                      )
+                    }
           </form>
         </div>
     </section>
