@@ -4,30 +4,7 @@ import React, {useState} from "react";
 import { TypeAnimation } from "react-type-animation";
 import {motion} from "framer-motion"
 import Link from "next/link";
-const HeroSection = (  creatorDetailData, categoryList) => {
-  const [isDownloading, setIsDownloading] = useState(false);
-  const handleFileDownload = () => {
-    setIsDownloading(true);
-    const fileUrl = `${creatorDetailData.file_src}`;
-
-    client // AxiosInstance
-      .get(fileUrl, { responseType: "blob" })
-      .then((response) => {
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = creatorDetailData.file_src.split("/").pop() || "download";
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a); 
-        setIsDownloading(false);
-      })
-      .catch((error) => {
-        console.error("파일 다운로드 오류:", error);
-        setIsDownloading(false);
-      });
-  };
+const HeroSection = ( ) => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -66,11 +43,12 @@ const HeroSection = (  creatorDetailData, categoryList) => {
               Hire Me
             </button>
             </Link>
+            <Link href="/JISUN_LEE.pdf" download>
             <button 
-              onClick={()=>handleFileDownload}
               className="px-6 py-3 rounded-full bg-transparent hover:bg-slate-800 border border-white text-white w-full sm:w-fit">
               Download CV
             </button>
+            </Link>
           </div>
         </motion.div>
         <motion.div 
