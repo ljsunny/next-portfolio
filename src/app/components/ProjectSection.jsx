@@ -11,7 +11,7 @@ const projectData = [
     description: "PHP, Mysql, React.js",
     image: "/images/projects/project1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/rotfg17/Tamwood-hotel",
     previewUrl: "/",
   },
   {
@@ -20,8 +20,8 @@ const projectData = [
     description: "HTML, CSS",
     image: "/images/projects/project2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ljsunny/responsive-static-web",
+    previewUrl: "https://ljsunny.github.io/responsive-static-web/",
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const projectData = [
     description: "HTML, CSS, Tailwind, Bootstrap",
     image: "/images/projects/project3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ljsunny/tailwind--website",
+    previewUrl: "https://ljsunny.github.io/tailwind--website/",
   },
   {
     id: 4,
@@ -38,8 +38,8 @@ const projectData = [
     description: "HTML, CSS",
     image: "/images/projects/project4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ljsunny/responsive-yoga-website",
+    previewUrl: "https://ljsunny.github.io/responsive-yoga-website/",
   },
   {
     id: 5,
@@ -47,8 +47,8 @@ const projectData = [
     description: "HTML, CSS",
     image: "/images/projects/project5.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ljsunny/chocobrat-bakery-website",
+    previewUrl: "https://ljsunny.github.io/chocobrat-bakery-website/",
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const projectData = [
     description: "HTML, CSS",
     image: "/images/projects/project6.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/adrianholz/chandan-design-agency-website",
     previewUrl: "/",
   },
   {
@@ -65,8 +65,8 @@ const projectData = [
     description: "HTML, CSS",
     image: "/images/projects/project7.png",
     tag: ["All", "mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ljsunny/final-static-website",
+    previewUrl: "https://ljsunny.github.io/final-static-website/",
   },
 ];
 const ProjectSection = () => {
