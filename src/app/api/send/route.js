@@ -15,6 +15,7 @@ export async function POST(req) {
       subject: subject || 'Hello world',  // 기본 제목 설정
       html: `
         <h1>${subject}</h1>
+        <h2>Email:${email}</h2>
         <p>Thank you for contacting us!</p>
         <p>New message submitted:</p>
         <p>${message}</p>
