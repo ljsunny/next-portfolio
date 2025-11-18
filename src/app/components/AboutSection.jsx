@@ -52,14 +52,7 @@ function AboutSection() {
         <div className="mt-5">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Developer with 3 years of experiencFe specializing in both backend
-            and frontend development. As an early member of a startup, played a
-            key role in the end-to-end development process, from feature
-            creation to system design. Gained substantial hands-on experience in
-            building and scaling products, with a focus on aligning technical
-            solutions with business goals. Strong communication skills
-            facilitate effective collaboration between technical teams and
-            stakeholders, ensuring successful project outcomes.
+          I am a developer with 3 years of experience in both backend and frontend development. As an early team member at a startup, I played a key role in the end-to-end development process, from designing features to building scalable systems. I have practical experience turning technical solutions into business value and enjoy collaborating closely with teams and stakeholders to deliver successful projects.
           </p>
           <div className="flex flex-row mt-8">
             <TabButton active={tab ==="skills"} selectTab={()=>handleTabChange("skills")}>
