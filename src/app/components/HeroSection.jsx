@@ -1,71 +1,89 @@
 "use client";
 import Image from "next/image";
-import React, {useState} from "react";
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import Link from "next/link";
-const HeroSection = ( ) => {
+
+const HeroSection = () => {
   return (
-    <section className="lg:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <motion.div 
-          initial={{opacity:0, scale:0.5}}
-          animate={{opacity:1, scale:1}}
-          transition={{ duration: 0.5}}
-          className="col-span-7 place-self-center text-center sm:text-left justify-self">
-          <h1 className="text-white mb-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
+      {/* subtle background glow */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.08),transparent_40%)]" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 w-full">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-7 place-self-center text-center sm:text-left px-6"
+        >
+          <h1 className="text-white mb-3 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
-              Hello I&apos;m{" "}
+              Hello I&apos;m
             </span>
             <br />
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Jisun Lee",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                "Web developer",
                 1000,
-                "Software engineer",
+                "Software Engineer",
                 1000,
               ]}
               wrapper="span"
-              speed={50}
-              style={{ fontSize: "1.2em", display: "inline-block" }}
+              speed={60}
+              style={{ fontSize: "1.25em", display: "inline-block" }}
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl ">
-          If you want to know more about me, please contact me below.
+
+          {/* identity line */}
+          <h2 className="text-gray-400 text-lg sm:text-xl mb-4">
+            Backend-focused Full-Stack Engineer
+          </h2>
+
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-8 lg:text-xl max-w-xl">
+            I build and operate production web systems and enjoy solving real-world
+            problems through clean, maintainable code.
           </p>
-          <div>
-          <Link href={"#contact"}>
-            <button  className="px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-white w-full sm:w-fit mb-3 sm:mb-0 bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500">
-              Hire Me
-            </button>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <Link href="#contact">
+              <button className="px-6 py-3 rounded-full bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500 text-white hover:opacity-90">
+                Hire Me
+              </button>
             </Link>
-            <Link href="/JISUN_LEE.pdf" download>
-            <button 
-              className="px-6 py-3 rounded-full bg-transparent hover:bg-slate-800 border border-white text-white w-full sm:w-fit">
-              Download CV
-            </button>
+
+            <Link href="/Jisun_Lee_Software_Engineer_Java_Backend.pdf" download>
+              <button className="px-6 py-3 rounded-full border border-white text-white hover:bg-slate-800">
+                Download CV
+              </button>
             </Link>
           </div>
         </motion.div>
-        <motion.div 
-          initial={{opacity:0, scale:0.5}}
-          animate={{opacity:1, scale:1}}
-          transition={{ duration: 0.5}}
-          className="col-span-5 place-self-center my-4 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[500px] h-[400px] relative">
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-5 place-self-center mt-12 lg:mt-0"
+        >
+          <div className="relative w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full bg-[#181818]">
             <Image
               src="/images/profile-photo.png"
-              alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="profile photo"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
               width={300}
               height={300}
+              priority
             />
           </div>
         </motion.div>
+      </div>
+
+      {/* scroll cue */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-500 text-sm animate-bounce">
+        ↓ Scroll
       </div>
     </section>
   );
