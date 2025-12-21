@@ -10,16 +10,16 @@ const projectData = [
     title: "Lina's deli",
     description: "Spring Boot, React.js, Supabase, AWS ec2, Stripe",
     image: "/images/projects/project9.png",
-    tag: ["All", "Web"],
+    tag: ["All", "FullStack"],
     gitUrl: "https://github.com/ljsunny/linas-deli",
     previewUrl: "https://linas-deli.ca/",
   },
   {
     id: 8,
     title: "My Portfolio",
-    description: "Next.js, Tailwind, Vercel",
+    description: "Next.js, Tailwind, Resend, Vercel",
     image: "/images/projects/project8.png",
-    tag: ["All", "Web"],
+    tag: ["All", "FullStack"],
     gitUrl: "https://github.com/ljsunny/next-portfolio",
     previewUrl: "https://jsun-hobby.com",
   },
@@ -28,7 +28,7 @@ const projectData = [
     title: "Tamwood Hotel website",
     description: "PHP, Mysql, React.js",
     image: "/images/projects/project7.png",
-    tag: ["All", "Web"],
+    tag: ["All", "FullStack"],
     gitUrl: "https://github.com/rotfg17/Tamwood-hotel",
     previewUrl: "/",
   },
@@ -37,7 +37,7 @@ const projectData = [
     title: "Roots clone website(Responsible)",
     description: "HTML, CSS",
     image: "/images/projects/project6.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/ljsunny/responsive-static-web",
     previewUrl: "https://ljsunny.github.io/responsive-static-web/",
   },
@@ -46,7 +46,7 @@ const projectData = [
     title: "Insurance website(Responsible)",
     description: "HTML, CSS, Tailwind, Bootstrap",
     image: "/images/projects/project5.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/ljsunny/tailwind--website",
     previewUrl: "https://ljsunny.github.io/tailwind--website/",
   },
@@ -55,7 +55,7 @@ const projectData = [
     title: "Yoga web site",
     description: "HTML, CSS",
     image: "/images/projects/project4.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/ljsunny/responsive-yoga-website",
     previewUrl: "https://ljsunny.github.io/responsive-yoga-website/",
   },
@@ -64,7 +64,7 @@ const projectData = [
     title: "Chocobrat website",
     description: "HTML, CSS",
     image: "/images/projects/project3.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/ljsunny/chocobrat-bakery-website",
     previewUrl: "https://ljsunny.github.io/chocobrat-bakery-website/",
   },
@@ -73,7 +73,7 @@ const projectData = [
     title: "Crafting Visual Stories",
     description: "HTML, CSS",
     image: "/images/projects/project2.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/adrianholz/chandan-design-agency-website",
     previewUrl: "/",
   },
@@ -82,7 +82,7 @@ const projectData = [
     title: "Design Studio Website",
     description: "HTML, CSS",
     image: "/images/projects/project1.png",
-    tag: ["All", "web"],
+    tag: ["All", "Front"],
     gitUrl: "https://github.com/ljsunny/final-static-website",
     previewUrl: "https://ljsunny.github.io/final-static-website/",
   },
@@ -114,9 +114,14 @@ const ProjectSection = () => {
           isSelected={tag === "All"}
         />
         <ProjectTag
-          name="Web"
+          name="FullStack"
           onClick={handleTagChange}
-          isSelected={tag === "Web"}
+          isSelected={tag === "FullStack"}
+        />
+        <ProjectTag
+          name="Front"
+          onClick={handleTagChange}
+          isSelected={tag === "Front"}
         />
       </div>
       <div className="grid md:grid-cols-3 md:gap-12 gap-8">

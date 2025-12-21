@@ -72,7 +72,7 @@ function AboutSection() {
 
           <p className="text-base lg:text-lg leading-relaxed text-gray-200">
             I’m a full-stack software engineer with hands-on experience building and operating production web systems using Java, Spring Boot, and React.<br/>
-            I contributed across the entire development lifecycle — from feature planning and API design to implementation, testing, and deployment.<br/>
+            I contributed across the entire development lifecycle from feature planning and API design to implementation, testing, and deployment.<br/>
             I focus on writing clean, maintainable code and enjoy translating technical solutions into real business value. I work closely with designers, product managers, and stakeholders to deliver reliable, user-focused products.<br/><br/>
           </p>
 

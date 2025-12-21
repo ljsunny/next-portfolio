@@ -1,17 +1,44 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useCallback } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 const HeroSection = () => {
+  // ✅ tsParticles 엔진 초기화 (중요)
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
-      {/* subtle background glow */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.08),transparent_40%)]" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 w-full">
+      {/* ✅ PARTICLES BACKGROUND */}
+      <Particles
+        init={particlesInit}
+        className="absolute inset-0 z-0"
+        style={{ width: "100%", height: "100%" }}
+        options={{
+          fullScreen: { enable: false },
+          background: { color: "transparent" },
+          particles: {
+            number: { value: 40 },
+            size: { value: 2 },
+            color: { value: "#60a5fa" },
+            opacity: { value: 0.4 },
+            move: { enable: true, speed: 0.6 },
+          },
+        }}
+      />
+
+      {/* subtle glow */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_70%_40%,rgba(59,130,246,0.08),transparent_40%)]" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -24,12 +51,7 @@ const HeroSection = () => {
             </span>
             <br />
             <TypeAnimation
-              sequence={[
-                "Jisun Lee",
-                1000,
-                "Software Engineer",
-                1000,
-              ]}
+              sequence={["Jisun Lee", 1000, "Software Engineer", 1000]}
               wrapper="span"
               speed={60}
               style={{ fontSize: "1.25em", display: "inline-block" }}
@@ -37,7 +59,6 @@ const HeroSection = () => {
             />
           </h1>
 
-          {/* identity line */}
           <h2 className="text-gray-400 text-lg sm:text-xl mb-4">
             Backend-focused Full-Stack Engineer
           </h2>
@@ -82,7 +103,7 @@ const HeroSection = () => {
       </div>
 
       {/* scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-500 text-sm animate-bounce">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-gray-500 text-sm animate-bounce">
         ↓ Scroll
       </div>
     </section>

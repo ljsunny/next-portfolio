@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container mx-auto px-3 py-4 mt-24">
           <HeroSection/>
           <AboutSection/>
-          {/* <ExperienceSection/> */}
+          <ExperienceSection/>
           <ProjectSection/>
           <EmailSection/>
         </div>

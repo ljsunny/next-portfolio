@@ -10,6 +10,10 @@ const navLinks =[
         path: "#about"
     },
     {
+        title: "Experiences",
+        path: "#experiences"
+    },
+    {
         title: "Projects",
         path: "#projects"
     },
@@ -21,9 +25,11 @@ const navLinks =[
 const Navbar = () => {
     const [navbarOpen,setNavbarOpen] = useState(false);
     return (
-        <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
+        <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90 z-50">
             <div className="flex flex-wrap items-center justify-between mx-auto p-8">
-                <Link href={"/"} className="text-5xl text-white font-semibold">JS</Link>
+            <Link href="/"
+                className="logo text-2xl md:text-3xl text-white tracking-tight hover:opacity-80 transition"
+                >JL</Link>
                 <div className="mobile-menu block md:hidden">
                     {
                         !navbarOpen ? 
