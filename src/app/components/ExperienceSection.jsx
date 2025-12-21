@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import ExperienceCard from './ExperienceCard'
 import ExperienceModal from './ExperienceModal'
 
@@ -36,7 +37,8 @@ const EXPERIENCES = [
         "Reduced operational issues by identifying and fixing root causes instead of applying temporary patches",
         "Enabled smoother collaboration by translating product requirements into implementable technical solutions"
       ]
-    }
+    },
+    image:'/images/experiences/experience2.png'
   },
   {
     id: "next-guide",
@@ -67,7 +69,8 @@ const EXPERIENCES = [
         "Improved long-term maintainability of legacy codebases",
         "Ensured stable system operation while gradually modernizing the platform"
       ]
-    }
+    },
+    image:'/images/experiences/experience1.jpeg'
   }
 ];
 
@@ -104,6 +107,15 @@ export default function ExperienceSection() {
       >
         {active ? (
           <div className="space-y-6">
+            <div className="relative w-full max-w-md aspect-[4/3] rounded-xl overflow-hidden">
+              <Image
+                src={active.image}
+                alt={`${active.company} experience`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
+            </div>
             <div>
               <p className="text-sm text-zinc-400">{active.period}</p>
               {active.summary ? (

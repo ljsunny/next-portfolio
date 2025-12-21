@@ -3,7 +3,7 @@ export default function ExperienceCard({ item, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="group w-full text-left rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition"
+      className="group w-full text-left rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition items-start"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
@@ -13,7 +13,6 @@ export default function ExperienceCard({ item, onClick }) {
           </p>
         </div>
         <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition">
-          View
         </span>
       </div>
 

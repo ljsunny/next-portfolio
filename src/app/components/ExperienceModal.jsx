@@ -8,11 +8,21 @@ export default function ExperienceModal({ open, onClose, title, children }) {
       aria-modal="true"
       aria-label={title}
       onMouseDown={(e) => {
-        // click outside to close
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="w-full max-w-3xl rounded-2xl border border-white/10 bg-zinc-950 shadow-xl">
+      <div
+        className="
+          w-full max-w-3xl
+          max-h-[90vh]
+          rounded-2xl
+          border border-white/10
+          bg-zinc-950
+          shadow-xl
+          flex flex-col
+        "
+      >
+        {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
           <h3 className="text-lg font-semibold text-white">{title}</h3>
           <button
@@ -24,7 +34,10 @@ export default function ExperienceModal({ open, onClose, title, children }) {
           </button>
         </div>
 
-        <div className="px-6 py-5">{children}</div>
+        {/* Scrollable content */}
+        <div className="px-6 py-5 overflow-y-auto">
+          {children}
+        </div>
       </div>
     </div>
   );
