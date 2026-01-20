@@ -6,7 +6,57 @@ const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req) {
   try {
-    const { email, subject, message } = await req.json(); // JSON 데이터를 추출
+    const { email, subject, message, company, recaptchaToken } = await req.json();
+
+    // 🤖 honeypot — 봇은 항상 채움
+    if (company) {
+      return NextResponse.json({ ok: true }, { status: 200 });
+    }
+
+    // tocken 없으면 차단
+    if (!recaptchaToken) {
+      return NextResponse.json(
+        { error: "Missing reCAPTCHA token" },
+        { status: 400 }
+      );
+    }    
+
+    const verifyRes = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+      }
+    );
+    
+    const verifyData = await verifyRes.json();
+    
+    if (!verifyData.success) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 403 }
+      );
+    }
+    
+    // action 위조 방지
+    if (verifyData.action !== "contact") {
+      return NextResponse.json(
+        { error: "Invalid reCAPTCHA action" },
+        { status: 403 }
+      );
+    }
+    
+    // 점수 기준 (0~1)
+    if (verifyData.score < 0.6) {
+      return NextResponse.json(
+        { error: "Bot detected" },
+        { status: 403 }
+      );
+    }
+    
     
     // 이메일 전송
     const data = await resend.emails.send({

@@ -116,6 +116,7 @@ export default function ExperienceSection() {
                 sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
+            <span className="text-zinc-200">This image is for illustrative purposes only.</span>
             <div>
               <p className="text-sm text-zinc-400">{active.period}</p>
               {active.summary ? (
