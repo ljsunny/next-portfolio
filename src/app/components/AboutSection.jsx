@@ -10,11 +10,11 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-4 space-y-1">
         <li>Languages & Core: Java, JavaScript, Python</li>
-        <li>Backend: Spring Boot, REST API Design, Authentication & Authorization, Scheduled Batch Processing (Python)</li>
+        <li>Backend: Spring Boot, REST API Design, Authentication & Authorization (basic), Scheduled Batch Processing (Python)</li>
         <li>Frontend: React, Next.js, HTML, CSS, JavaScript</li>
         <li>Database: MySQL, Oracle, PostgreSQL, MongoDB</li>
-        <li>Cloud & DevOps: AWS EC2, CI/CD (GitHub Actions, Jenkins), Docker</li>
-        <li>Testing & Tools: JUnit, Mockito, Git</li>
+        <li>Cloud & DevOps: AWS EC2, Docker, CI/CD (GitHub Actions, Jenkins – exposure)</li>
+        <li>Testing & Quality: JUnit, basic unit testing, debugging, strong attention to edge cases and reliability</li>
       </ul>
     ),
   },
@@ -71,9 +71,12 @@ function AboutSection() {
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
 
           <p className="text-base lg:text-lg leading-relaxed text-gray-200">
-            I’m a full-stack software engineer with hands-on experience building and operating production web systems using Java, Spring Boot, and React.<br/>
-            I contributed across the entire development lifecycle from feature planning and API design to implementation, testing, and deployment.<br/>
-            I focus on writing clean, maintainable code and enjoy translating technical solutions into real business value. I work closely with designers, product managers, and stakeholders to deliver reliable, user-focused products.<br/><br/>
+          I’m a junior software engineer with hands-on experience building and operating production web applications using Java, Spring Boot, and React.<br/>
+          I’ve worked across the development lifecycle—from API design and implementation to testing and deployment—while learning to prioritize code quality, reliability, and maintainability.<br/>
+          I enjoy collaborating with designers and product teams, with close attention to usability and edge cases.<br/>
+          I continuously improve my engineering skills through real-world projects.
+
+
           </p>
 
           <div className="flex flex-row mt-8 gap-4">

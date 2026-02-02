@@ -50,34 +50,39 @@ const HeroSection = () => {
               Hello I&apos;m
             </span>
             <br />
-            <TypeAnimation
-              sequence={["Jisun Lee", 1000, "Software Engineer", 1000]}
-              wrapper="span"
-              speed={60}
-              style={{ fontSize: "1.25em", display: "inline-block" }}
-              repeat={Infinity}
-            />
+                
+            {/* 🔒 고정 폭 컨테이너 */}
+            <span className="inline-block min-w-[14ch]">
+              <TypeAnimation
+                sequence={["Jisun Lee", 1200, "Junior Software Engineer", 1200]}
+                wrapper="span"
+                speed={60}
+                repeat={Infinity}
+                style={{ display: "inline-block" }}
+              />
+            </span>
           </h1>
 
+
           <h2 className="text-gray-400 text-lg sm:text-xl mb-4">
-            Backend-focused Full-Stack Engineer
+            Build · Test · Ship reliable web apps
           </h2>
 
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-8 lg:text-xl max-w-xl">
-            I build and operate production web systems and enjoy solving real-world
-            problems through clean, maintainable code.
+            I build production-ready web applications <br/>
+            with a strong backend foundation and a focus on usability.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <Link href="#contact">
               <button className="px-6 py-3 rounded-full bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500 text-white hover:opacity-90">
-                Hire Me
+                Contact
               </button>
             </Link>
 
-            <Link href="/Jisun_Lee_Software_Engineer_Java_Backend.pdf" download>
+            <Link href="/Jisun_Lee_Junior_Software_Engineer.pdf" download>
               <button className="px-6 py-3 rounded-full border border-white text-white hover:bg-slate-800">
-                Download CV
+                Resume (PDF)
               </button>
             </Link>
           </div>
